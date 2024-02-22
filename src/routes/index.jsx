@@ -21,6 +21,8 @@ import HouseDetails from "../pages/house/HouseDetails"
 import SanitationList from "../pages/house/SanitationList"
 import AddSanitation from "../pages/house/AddSanitation"
 import ViewSanitation from "../pages/house/ViewSanitation"
+import PersonDetails from "../pages/house/PersonDetails"
+import MoreDetails from "../pages/house/MoreDetails"
 export const AppRoutes = createBrowserRouter([
 	{
 		path: "/",
@@ -118,5 +120,13 @@ export const AppRoutes = createBrowserRouter([
 	{
 		path: "/viewsanitation",
 		element: <ViewSanitation/>
+	},
+	{
+		path: "/persondetails",
+		element: <PersonDetails/>
+	},
+	{
+		path: "/more",
+		element: <MoreDetails/>
 	},
 ])

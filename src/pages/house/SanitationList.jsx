@@ -90,6 +90,9 @@ const SanitationList = () => {
                 <th scope="col" className="px-6 py-4">
                   Year
                 </th>
+                <th scope="col" className="px-6 py-4">
+                Aggregate
+                </th>
 
                 <th scope="col" className="px-6 py-4">
                   Action
@@ -102,6 +105,7 @@ const SanitationList = () => {
                 <td className="whitespace-nowrap px-6 py-4">first</td>
                 <td className="whitespace-nowrap px-6 py-4">january</td>
                 <td className="whitespace-nowrap px-6 py-4">2024</td>
+                <td className="whitespace-nowrap px-6 py-4">B</td>
 
                 <td className="whitespace-nowrap px-6 py-4">
                   <Link to="/viewsanitation">
@@ -120,6 +124,8 @@ const SanitationList = () => {
                   febuary
                 </td>
                 <td className="whitespace-nowrap px-6 py-4">8</td>
+                <td className="whitespace-nowrap px-6 py-4">A</td>
+
                 <td className="whitespace-nowrap px-6 py-4">
                   <Link to="/viewsanitation">
                     <button className="bg-blue text-slate-100 px-3 py-1 rounded-md">
