@@ -33,11 +33,17 @@ const HouseList = () => {
                   Ward
                 </th>
                 <th scope="col" className="px-6 py-4">
+                  Sub-Ward
+                </th>
+                <th scope="col" className="px-6 py-4">
                   Street
                 </th>
 
                 <th scope="col" className="px-6 py-4">
-                  Number
+                  House No.
+                </th>
+                <th scope="col" className="px-6 py-4">
+                 Occupants
                 </th>
                 <th scope="col" className="px-6 py-4">
                   Action
@@ -50,8 +56,10 @@ const HouseList = () => {
                 <td className="whitespace-nowrap px-6 py-4">Abuja</td>
                 <td className="whitespace-nowrap px-6 py-4">galadimawa</td>
                 <td className="whitespace-nowrap px-6 py-4">7</td>
+                <td className="whitespace-nowrap px-6 py-4">13</td>
                 <td className="whitespace-nowrap px-6 py-4">ladipo streetbb</td>
                  <td className="whitespace-nowrap px-6 py-4">12</td>
+                 <td className="whitespace-nowrap px-6 py-4">4</td>
                  <td className="whitespace-nowrap px-6 py-4">
       <Link to="/housedetails">
         <button className="bg-blue text-slate-100 px-3 py-1 rounded-md">View Details</button>
@@ -64,10 +72,12 @@ const HouseList = () => {
                 <td className="whitespace-nowrap px-6 py-4"> Ekiti</td>
                 <td className="whitespace-nowrap px-6 py-4">mitaima</td>
                 <td className="whitespace-nowrap px-6 py-4">12</td>
+                <td className="whitespace-nowrap px-6 py-4">2</td>
                 <td className="whitespace-nowrap px-6 py-4">
                   wole soyinka drive
                 </td>
                 <td className="whitespace-nowrap px-6 py-4">8</td>
+                <td className="whitespace-nowrap px-6 py-4">6</td>
                 <td className="whitespace-nowrap px-6 py-4">
       <Link to="/housedetails">
         <button className="bg-blue text-slate-100 px-3 py-1 rounded-md">View Details</button>

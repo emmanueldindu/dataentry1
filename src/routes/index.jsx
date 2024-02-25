@@ -23,6 +23,7 @@ import AddSanitation from "../pages/house/AddSanitation"
 import ViewSanitation from "../pages/house/ViewSanitation"
 import PersonDetails from "../pages/house/PersonDetails"
 import MoreDetails from "../pages/house/MoreDetails"
+import Update from "../pages/house/Update"
 export const AppRoutes = createBrowserRouter([
 	{
 		path: "/",
@@ -128,5 +129,10 @@ export const AppRoutes = createBrowserRouter([
 	{
 		path: "/more",
 		element: <MoreDetails/>
+	},
+
+	{
+		path: "/update",
+		element: <Update/>
 	},
 ])

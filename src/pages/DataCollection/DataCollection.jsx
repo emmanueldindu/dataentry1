@@ -102,6 +102,17 @@ const [selectedLGA, setSelectedLGA] = useState('');
 										</optgroup>
 									</select>
 								</div>
+
+								<div className="">
+									<label className="mb-3 block">Mode Of Entry *</label>
+									<select required className="p-3 rounded bg-slate-300 block w-full">
+										<optgroup>
+											<option value={"birth"}>Birth</option>
+											<option value={"adoption"}>Adoption</option>
+											<option value={"marriage"}>Marriage</option>
+										</optgroup>
+									</select>
+								</div>
 								<div className="">
 									<label className="mb-3 block">Nationality*</label>
 									<input required className="p-3 rounded bg-slate-300 block w-full" type="text" />

@@ -37,7 +37,7 @@ const AddSanitation = () => {
             <div className="grid lg:grid-cols-1 xs:grid-cols-1 gap-4 mx-auto justify-center w-[80%]">
               <div class="mb-4 flex items-center justify-between ">
                 <label class="block text-blue text-2xl font-bold mr-2">
-                  Living Room
+                  General Environment
                 </label>
                 {Array.from({ length: 5 }, (_, index) => (
                   <div key={index} class="flex items-center mr-3  ">
@@ -60,51 +60,6 @@ const AddSanitation = () => {
 
               {/* Repeat the above structure for other items */}
 
-              <div class="mb-4 flex items-center justify-between">
-                <label class="block text-blue text-2xl  font-bold mr-2">
-                  Kitchen
-                </label>
-                {Array.from({ length: 5 }, (_, index) => (
-                  <div key={index} class="flex items-center mr-3">
-                    <input
-                      type="radio"
-                      id={`kitchenRating${index + 1}`}
-                      name="kitchenRating"
-                      value={index + 1}
-                      class="mr-1"
-                    />
-                    <label
-                      for={`kitchenRating${index + 1}`}
-                      class="text-blue text-sm"
-                    >
-                      {index + 1}
-                    </label>
-                  </div>
-                ))}
-              </div>
-
-              <div class="mb-4 flex items-center justify-between">
-                <label class="block text-blue text-2xl font-bold mr-2">
-                  Toilets
-                </label>
-                {Array.from({ length: 5 }, (_, index) => (
-                  <div key={index} class="flex items-center mr-2">
-                    <input
-                      type="radio"
-                      id={`toiletRating${index + 1}`}
-                      name="toiletRating"
-                      value={index + 1}
-                      class="mr-1"
-                    />
-                    <label
-                      for={`toiletRating${index + 1}`}
-                      class="text-blue text-sm"
-                    >
-                      {index + 1}
-                    </label>
-                  </div>
-                ))}
-              </div>
 
               <div class="mb-4 flex items-center justify-between">
                 <label class="block text-blue text-2xl font-bold mr-2">

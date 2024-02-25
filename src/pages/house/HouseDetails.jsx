@@ -143,7 +143,7 @@ const HouseDetails = () => {
     </td>
 
     <td className="whitespace-nowrap px-6 py-4">
-                  <Link to="/data-collection">
+                  <Link to="/update">
         <button className="bg-blue text-slate-100 px-3 py-1 rounded-md">Update</button>
       </Link>
     </td>
@@ -175,7 +175,7 @@ const HouseDetails = () => {
       </Link>
     </td>
     <td className="whitespace-nowrap px-6 py-4">
-                  <Link to="/data-collection">
+                  <Link to="/update">
         <button className="bg-blue text-slate-100 px-3 py-1 rounded-md">Update</button>
       </Link>
     </td>

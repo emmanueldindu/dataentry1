@@ -989,6 +989,19 @@ const AddHouse = () => {
                   </div>
 
                   <div className="">
+                    <label htmlFor="employeeStatus" className="mb-3 block">
+                      Sub-ward/ANGUWA *
+                    </label>
+
+                    <input
+                      required
+                      className="p-3 rounded bg-slate-200 block w-full"
+                      type="text"
+                      name="subward"
+                    />
+                  </div>
+
+                  <div className="">
                     <label htmlFor="street" className="mb-3 block">
                       Street *
                     </label>
