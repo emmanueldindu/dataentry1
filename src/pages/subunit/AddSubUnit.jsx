@@ -1,32 +1,20 @@
-import React, { useState } from "react";
+
 import Layout from "../../components/layout/Layout";
-import NavHeader from "../../components/layout/NavHeader";
-import { useNavigate, Link } from "react-router-dom";
-import { Bars3Icon, CloudArrowDownIcon, MapPinIcon, PlusIcon } from "@heroicons/react/24/solid"
-import AddButton from "../../components/layout/AddButton";
-import Select from 'react-select';
-export default function TeamPage() {
-	const navigate = useNavigate();
+import ContentContainer from "../../components/misc/ContentContainer";
+import { ArrowLeftIcon } from "@heroicons/react/24/solid";
+import React, { useState, ChangeEvent } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
+
+const AddSubUnit = () => {
+    const navigate = useNavigate();
     const handleGoBack = () => {
       navigate(-1); // Navigates back one step in the history
     };
   
     const [selectedState, setSelectedState] = useState("");
     const [selectedLGA, setSelectedLGA] = useState("");
-    const [selectedOfficers, setSelectedOfficers] = useState([]);
-
-  const officers = [
-    { value: "john", label: "John" },
-    { value: "ali", label: "Ali" },
-    { value: "malik", label: "Malik" },
-    { value: "dayo", label: "Dayo" },
-  ];
-
-  const handleChange = (event) => {
-    const newSelectedOfficers = Array.from(event.target.selectedOptions)
-      .map((option) => option.value);
-    setSelectedOfficers(newSelectedOfficers);
-  };
+  
     const nigeriaStates = [
       "Abia",
       "Adamawa",
@@ -924,179 +912,111 @@ export default function TeamPage() {
       navigate("/subunit");
     };
 
-	return (
-		<Layout>
-		<div className="flex gap-8 w-full md:justify-between md:items-center md:flex-row xs:flex-col">
-				   <div className="flex items-center gap-8">
-					   <Bars3Icon width={34} height={34} className="cursor-pointer md:hidden xs:inline" />
-					   <h1 className="text-2xl font-bold p-3 text-blue">Welcome back! Aisha</h1>
-				   </div>
-				   <div className="flex items-center gap-3 text-blue">
-					   <MapPinIcon width={24} height={24} /> <span className="underline">Kubwa, Abuja</span>
-				   </div>
-	   
-				   <div className="flex gap-4 justify-between xs:flex-col md:flex-row ">
-					   <button className="rounded-1xl text-sm border-2 border-gray-300 flex items-center gap-3 text-slate-400 focus:outline-none" type="button">
-						   <CloudArrowDownIcon width={24} height={24} /> Export Report
-					   </button>
-	   
-									  
-			  
-	   
-	   
-				   </div>
-			   </div>
-			 <div className="p-3 my-8 overflow-hidden">
-			   <h2 className="font-bold text-2xl">Sub-Unit List</h2>
-			   <p className="text-slate-500 font-normal">
-				 Here is a list of Sub-units
-			   </p>
-			   <section className="">
-				 <form action="" className="">
-				   <div className="grid lg:grid-cols-2 xs:grid-cols-1 gap-4">
-					 <div className="">
-					   <label className="mb-3 block">State*</label>
-					   <select
-						 required
-						 className="p-3 rounded bg-slate-300 block w-full"
-						 onChange={handleStateChange}
-						 value={selectedState}
-					   >
-						 <option value="" disabled>
-						   Select a State
-						 </option>
-						 {nigeriaStates.map((state, index) => (
-						   <option key={index} value={state}>
-							 {state}
-						   </option>
-						 ))}
-					   </select>
-					 </div>
-	   
-					 <div className="">
-					   <label className="mb-3 block">LGA*</label>
-					   <select
-						 required
-						 className="p-3 rounded bg-slate-300 block w-full"
-						 value={selectedLGA}
-						 onChange={(e) => setSelectedLGA(e.target.value)}
-					   >
-						 <option value="" disabled>
-						   Select an LGA
-						 </option>
-						 {nigeriaLGAs[selectedState] &&
-						   nigeriaLGAs[selectedState].map((lga, index) => (
-							 <option key={index} value={lga}>
-							   {lga}
-							 </option>
-						   ))}
-					   </select>
-					 </div>
-	   
-					 <div className="">
-					   <label className="mb-3 block">Ward *</label>
-					   <select
-						 required
-						 className="p-3 rounded bg-slate-300 block w-full"
-					   >
-						 <optgroup>
-						   <option value={"birth"}>1</option>
-						   <option value={"adoption"}>2</option>
-						   <option value={"marriage"}>3</option>
-						 </optgroup>
-					   </select>
-							</div>
-							<div className="">
+    
+  return (
+    <Layout>
+    <ContentContainer>
+      <section className="my-5 grid grid-cols-1 gap-4">
+        <head className="grid lg:grid-cols-3 gap-4 mb-5">
+          <div className="">
+            <button
+              onClick={handleGoBack}
+              className="flex gap-2 text-slate-800"
+            >
+              <ArrowLeftIcon className="0" width={24} height={24} />{" "}
+              <span>Back</span>
+            </button>
+          </div>
+
+          <div className="col-span-2">
+            <h1 className="text-2xl font-bold text-blue">
+              Add Sub-unit
+            </h1>
+          </div>
+        </head>
+
+        <section className="">
+          <form action="" className="" onSubmit={handleSubmit}>
+          <div className="grid lg:grid-cols-2 xs:grid-cols-1 gap-4">
+              <div className="">
+                <label className="mb-3 block">State*</label>
+                <select
+                  required
+                  className="p-3 rounded bg-slate-300 block w-full"
+                  onChange={handleStateChange}
+                  value={selectedState}
+                >
+                  <option value="" disabled>
+                    Select a State
+                  </option>
+                  {nigeriaStates.map((state, index) => (
+                    <option key={index} value={state}>
+                      {state}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="">
+                <label className="mb-3 block">LGA*</label>
+                <select
+                  required
+                  className="p-3 rounded bg-slate-300 block w-full"
+                  value={selectedLGA}
+                  onChange={(e) => setSelectedLGA(e.target.value)}
+                >
+                  <option value="" disabled>
+                    Select an LGA
+                  </option>
+                  {nigeriaLGAs[selectedState] &&
+                    nigeriaLGAs[selectedState].map((lga, index) => (
+                      <option key={index} value={lga}>
+                        {lga}
+                      </option>
+                    ))}
+                </select>
+              </div>
+
+              <div className="">
+                <label className="mb-3 block">Ward *</label>
+                <select
+                  required
+                  className="p-3 rounded bg-slate-300 block w-full"
+                >
+                  <optgroup>
+                    <option value={"birth"}>1</option>
+                    <option value={"adoption"}>2</option>
+                    <option value={"marriage"}>3</option>
+                  </optgroup>
+                </select>
+                              </div>
+                              <div className="">
                     <label htmlFor="employeeStatus" className="mb-3 block">
-                      Team Name *
+                      Sub-Units *
                     </label>
 
                     <input
                       required
                       className="p-3 rounded bg-slate-200 block w-full"
                       type="text"
-                      name="teamname"
+                      name="sub units"
                     />
-							</div>
-							<div className="">
-      <label className="mb-3 block">Field Officers *</label>
-      <Select
-        required
-        isMulti  // Enable multi-select
-        options={officers}
-        className="p-3 rounded bg-slate-300 block w-full"
-      />
-    </div>
-				   </div>
-				   {/* super admin, senoir admin, admin, supervisor, fieldofficers */}
-				 </form>
-			   </section>
-	   
-			   <div className="overflow-x-auto">
-				 <table className="min-w-full text-center text-sm font-light mt-8 overflow-x-auto table-auto">
-				   <thead className="font-medium bg-blue text-slate-100 ">
-					 <tr>
-					   <th scope="col" className="px-6 py-4">
-						 #
-								</th>
-								<th scope="col" className="px-6 py-4">
-						 Team name
-					   </th>
-					   <th scope="col" className="px-6 py-4">
-						 State
-					   </th>
-					   <th scope="col" className="px-6 py-4">
-						 LGA
-					   </th>
-					   <th scope="col" className="px-6 py-4">
-						 Ward
-					   </th>
-					   <th scope="col" className="px-6 py-4">
-						 Action
-					   </th>
-	   
-					 
-					 </tr>
-				   </thead>
-				   <tbody>
-					 <tr>
-								<td className="whitespace-nowrap px-6 py-4 font-medium">1</td>
-								<td className="whitespace-nowrap px-6 py-4 font-medium">Galaxy</td>
-					   <td className="whitespace-nowrap px-6 py-4">Enugu</td>
-					   <td className="whitespace-nowrap px-6 py-4">Nsukka</td>
-					   <td className="whitespace-nowrap px-6 py-4">7</td>
+                  </div>
+                          </div>
+                          
+            {/* super admin, senoir admin, admin, supervisor, fieldofficers */}
 
-	   
-					   <td className="whitespace-nowrap px-6 py-4">
-						 <Link to="/viewteam">
-						   <button className="bg-blue text-slate-100 px-3 py-1 rounded-md">
-							 View Details
-						   </button>
-						 </Link>
-					   </td>
-					
-					 </tr>
-					 <tr>
-								<td className="whitespace-nowrap px-6 py-4 font-medium">2</td>
-								<td className="whitespace-nowrap px-6 py-4 font-medium">Icons</td>
-					   <td className="whitespace-nowrap px-6 py-4">Gombe</td>
-					   <td className="whitespace-nowrap px-6 py-4">Akko</td>
-					   <td className="whitespace-nowrap px-6 py-4">9</td>
-
-	   
-					   <td className="whitespace-nowrap px-6 py-4">
-						 <Link to="/viewteam">
-						   <button className="bg-blue text-slate-100 px-3 py-1 rounded-md">
-							 View Details
-						   </button>
-						 </Link>
-					   </td>
-					
-					 </tr>
-				   </tbody>
-				 </table>
-			   </div>
-			 </div>
-		   </Layout>
-	)
+            <div className="my-4 flex items-center justify-end">
+              <button className="p-3 rounded bg-blue text-slate-100 text-center">
+                Add Unit
+              </button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </ContentContainer>
+  </Layout>
+  )
 }
+
+export default AddSubUnit

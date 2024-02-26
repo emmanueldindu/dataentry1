@@ -24,6 +24,9 @@ import ViewSanitation from "../pages/house/ViewSanitation"
 import PersonDetails from "../pages/house/PersonDetails"
 import MoreDetails from "../pages/house/MoreDetails"
 import Update from "../pages/house/Update"
+import SubUnit from "../pages/subunit/SubUnit"
+import AddSubUnit from "../pages/subunit/AddSubUnit"
+import ViewTeam from "../pages/team/ViewTeam."
 export const AppRoutes = createBrowserRouter([
 	{
 		path: "/",
@@ -134,5 +137,17 @@ export const AppRoutes = createBrowserRouter([
 	{
 		path: "/update",
 		element: <Update/>
+	},
+	{
+		path: "/subunit",
+		element: <SubUnit/>
+	},
+	{
+		path: "/addsubunit",
+		element: <AddSubUnit/>
+	},
+	{
+		path: "/viewteam",
+		element: <ViewTeam/>
 	},
 ])

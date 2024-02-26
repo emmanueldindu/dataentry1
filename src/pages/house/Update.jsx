@@ -24,7 +24,7 @@ const Update = () => {
 
               <div className="col-span-2 justify-center ">
                 <h1 className="text-2xl font-bold text-blue  ">
-                  House Details
+                  Malik's Details
                 </h1>
               </div>
                 </head>
